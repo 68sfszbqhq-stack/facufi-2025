@@ -1,0 +1,51 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f9fa;
+}
+.hero-section {
+    background: url('../img/hero-background.jpg') center/cover no-repeat;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-title {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1.7rem;
+}
+.candidate-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.17s, box-shadow 0.17s;
+    box-shadow: 0 6px 22px rgba(32, 41, 62, 0.16);
+}
+.candidate-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 32px rgba(32,41,62,0.19);
+}
+.card-img-top {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background: #dee2e6;
+}
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.card-subtitle {
+    font-size: 1rem;
+}
+.card-text {
+    font-size: 1rem;
+    margin-top: 0.7rem;
+}
+footer {
+    border-top: 2px solid #343a40;
+}
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
