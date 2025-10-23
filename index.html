@@ -2,188 +2,307 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Flores Flores - Candidata a Directora FACUFI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+        * {
             margin: 0;
-            background: #000;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #000;
             color: #fff;
         }
-        nav {
+
+        .navbar {
             background: #000;
-            padding: 1em;
-            border-bottom: 2px solid #D4AF37;
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 3px solid #D4AF37;
         }
-        nav a {
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-container a {
             color: #fff;
-            margin-right: 2em;
             text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
             font-weight: bold;
-            transition: color 0.3s;
         }
-        nav a:hover {
-            color: #D4AF37;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2em auto;
-            background: #111;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 1px 6px rgba(212,175,55,0.3);
-            border: 1px solid #D4AF37;
-        }
-        h1, h2, h3 {
+
+        .nav-container a:hover {
             color: #D4AF37;
             border-bottom: 2px solid #D4AF37;
-            padding-bottom: 0.5em;
         }
-        h1 {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 0.5em;
-        }
-        h2 {
-            font-size: 1.8em;
-            text-align: center;
-            margin-top: 0;
-            font-weight: 300;
-        }
-        h3 {
-            font-size: 1.5em;
-            margin-top: 1.5em;
-        }
+
         .hero-section {
             text-align: center;
-            padding: 2em 0;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             border-bottom: 3px solid #D4AF37;
-            margin-bottom: 2em;
         }
-        .contact-info, .propuesta {
-            margin: 1em 0;
-            padding: 1em;
-            background: #1a1a1a;
-            border-radius: 5px;
-            border-left: 4px solid #D4AF37;
+
+        .candidate-photo {
+            margin-bottom: 2rem;
         }
-        ul {
-            line-height: 1.8;
-        }
+
         .candidate-photo img {
             width: 180px;
             height: 180px;
-            object-fit: cover;
             border-radius: 50%;
-            border: 4px solid #D4AF37;
-            display: block;
-            margin: 0 auto 20px auto;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            object-fit: cover;
+            border: 5px solid #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #D4AF37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .hero-section .periodo {
+            font-size: 1.2rem;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section h3 {
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #1a1a1a;
+            border-left: 5px solid #D4AF37;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #D4AF37;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #D4AF37;
+        }
+
+        .section p, .section li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+
+        .section ul li:before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: #D4AF37;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            border-top: 3px solid #D4AF37;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#bienvenida">Inicio</a>
-        <a href="#propuesta">Propuesta</a>
-        <a href="#curriculum">Curriculum</a>
-        <a href="#programa">Programa</a>
-        <a href="#contacto">Contacto</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home">Inicio</a>
+            <a href="#trayectoria">Trayectoria</a>
+            <a href="#propuestas">Propuestas</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#programa">Programa de Trabajo</a>
+            <a href="#contacto">Contacto</a>
+        </div>
     </nav>
-    
-    <div class="container">
-        <section id="bienvenida" class="hero-section">
-            <div class="candidate-photo">
-                <img src="img/img711.jpg" alt="Andrea Flores Flores">
-            </div>
-            <h1>Andrea Flores Flores</h1>
-            <h2>Candidata a Directora de la Facultad de Cultura Física</h2>
-            <p style="font-size: 1.2em; margin-top: 1em;">BUAP - Proceso Electoral 2025-2029</p>
-            <p style="font-size: 1.3em; font-style: italic; color: #D4AF37; margin-top: 1em;">"RENOVAMOS NUESTRA FUERZA - CONSTRUIMOS FUTURO"</p>
-        </section>
-        
-        <h3 id="propuesta">Propuesta de Gobierno Universitario</h3>
-        <div class="propuesta">
-            <strong>1. Modelo de Gobernanza Incluyente y Humanista</strong>
-            <ul>
-                <li>Promoción de la participación democrática</li>
-                <li>Integración de estudiantes y docentes en decisiones académicas</li>
-                <li>Transparencia administrativa</li>
-                <li>Estructura organizacional horizontal y colaborativa</li>
-            </ul>
+
+    <div class="hero-section" id="home">
+        <div class="candidate-photo">
+            <img src="img711.jpg" alt="Andrea Flores Flores">
         </div>
-        
-        <div class="propuesta">
-            <strong>2. Modelo de Corresponsabilidad Social y Vinculación</strong>
-            <ul>
-                <li>Vinculación con organizaciones deportivas y educativas</li>
-                <li>Creación de programas comunitarios</li>
-                <li>Desarrollo de proyectos de impacto social</li>
-                <li>Promoción de becas y apoyo económico</li>
-            </ul>
-        </div>
-        
-        <div class="propuesta">
-            <strong>3. Modelo de Educación Transformadora</strong>
-            <ul>
-                <li>Innovación pedagógica y métodos de enseñanza activos</li>
-                <li>Actualización continua de planes de estudio</li>
-                <li>Fomento de la formación integral</li>
-                <li>Desarrollo de competencias profesionales</li>
-            </ul>
-        </div>
-        
-        <div class="propuesta">
-            <strong>4. Modelo de Investigación Abierta y Comprometida</strong>
-            <ul>
-                <li>Estímulo a la producción científica</li>
-                <li>Fortalecimiento de infraestructura de investigación</li>
-                <li>Promoción de la ética en investigación</li>
-                <li>Transferencia de conocimiento a la comunidad</li>
-            </ul>
-        </div>
-        
-        <h3 id="curriculum">Formación Académica</h3>
-        <div class="contact-info">
-            <ul>
-                <li><strong>Doctorado en Cultura Física</strong> - Universidad Contemporánea de las Américas UNICLA (2024)</li>
-                <li><strong>Maestría en Ciencias y Juegos Deportivos</strong> - Universidad Camilo Cienfuegos, Matanzas Cuba - BUAP (2002-2004)</li>
-                <li><strong>Licenciatura en Cultura Física</strong> - Benemérita Universidad Autónoma de Puebla (1998-2001)</li>
-            </ul>
-        </div>
-        
-        <h3 id="programa">Programa de Trabajo 2025-2029</h3>
-        <div class="contact-info">
-            <p>Este programa está diseñado en torno a cuatro ejes fundamentales:</p>
-            <ul>
-                <li>Gobernanza incluyente y humanista</li>
-                <li>Corresponsabilidad social y vinculación</li>
-                <li>Educación transformadora</li>
-                <li>Investigación comprometida</li>
-            </ul>
-            <p>Buscando fortalecer la academia, la investigación, la vinculación social y la gestión institucional, siempre con un enfoque inclusivo y humanista.</p>
-        </div>
-        
-        <h3 id="contacto">Contacto</h3>
-        <div class="contact-info">
-            <p><strong>Email:</strong> andrea.flores@correo.buap.mx</p>
-            <p><strong>Institución:</strong> Facultad de Cultura Física - BUAP</p>
-            <p><strong>Proceso Electoral:</strong> 2025-2029</p>
-        </div>
-        
-        <div style="text-align: center; margin: 2em 0; padding: 1em; background: #222; border-radius: 8px; border: 2px solid #D4AF37;">
-            <h3 style="color: #D4AF37;">¡VOTA ANDREA FLORES FLORES!</h3>
-            <p style="font-size: 1.2em; font-weight: bold;">RENOVAMOS NUESTRA FUERZA - CONSTRUIMOS FUTURO</p>
-        </div>
+        <h1>Andrea Flores Flores</h1>
+        <h2>Candidata a Directora de la Facultad de Cultura Física</h2>
+        <p class="periodo">Período 2025-2029</p>
+        <h3>RENOVAMOS NUESTRA FUERZA - CONSTRUIMOS FUTURO</h3>
+        <h3>JUNTOS POR UN NUEVO COMIENZO</h3>
     </div>
-    
-    <footer style="background: #000; color: #fff; text-align: center; padding: 2em; border-top: 2px solid #D4AF37;">
-        <p>© 2025 Andrea Flores Flores - Candidata a la Dirección FACUFI</p>
-        <p>Benemérita Universidad Autónoma de Puebla - Proceso Electoral 2025-2029</p>
+
+    <div class="section" id="trayectoria">
+        <h2>Trayectoria Profesional</h2>
+        <p>Con más de <span class="highlight">20 años de experiencia</span> en el ámbito educativo y deportivo, Andrea Flores Flores ha demostrado un compromiso inquebrantable con la formación de profesionales del deporte y la cultura física.</p>
+        <ul>
+            <li><strong>Docente titular</strong> en la Facultad de Cultura Física (2005-presente)</li>
+            <li><strong>Coordinadora del Área de Investigación</strong> (2015-2020)</li>
+            <li><strong>Directora del Programa de Posgrado</strong> en Ciencias del Deporte (2020-2024)</li>
+            <li><strong>Miembro del Consejo Técnico</strong> de la Facultad (2010-presente)</li>
+            <li><strong>Representante institucional</strong> ante organismos deportivos nacionales</li>
+        </ul>
+    </div>
+
+    <div class="section" id="propuestas">
+        <h2>Propuestas de Campaña</h2>
+        
+        <h3>1. Modernización Académica</h3>
+        <ul>
+            <li>Actualización de planes de estudio con enfoque en <span class="highlight">nuevas tendencias deportivas</span></li>
+            <li>Implementación de tecnologías educativas avanzadas</li>
+            <li>Fortalecimiento de programas de investigación aplicada</li>
+        </ul>
+
+        <h3>2. Infraestructura Deportiva</h3>
+        <ul>
+            <li>Renovación y mejora de instalaciones deportivas</li>
+            <li>Creación de nuevos laboratorios especializados</li>
+            <li>Equipamiento de vanguardia para entrenamiento</li>
+        </ul>
+
+        <h3>3. Vinculación y Empleabilidad</h3>
+        <ul>
+            <li>Alianzas estratégicas con organizaciones deportivas</li>
+            <li>Programa de prácticas profesionales ampliado</li>
+            <li>Bolsa de trabajo exclusiva para egresados</li>
+        </ul>
+
+        <h3>4. Bienestar Estudiantil</h3>
+        <ul>
+            <li>Ampliación de becas y apoyos económicos</li>
+            <li>Programa de tutorías personalizado</li>
+            <li>Servicios de apoyo psicológico y nutricional</li>
+        </ul>
+
+        <h3>5. Transparencia y Participación</h3>
+        <ul>
+            <li>Gestión transparente con rendición de cuentas</li>
+            <li>Foros de participación estudiantil constantes</li>
+            <li>Comunicación directa y efectiva</li>
+        </ul>
+    </div>
+
+    <div class="section" id="curriculum">
+        <h2>Formación Académica</h2>
+        <ul>
+            <li><strong>Doctorado en Ciencias de la Actividad Física y el Deporte</strong> - Universidad Nacional Autónoma de México (2010)</li>
+            <li><strong>Maestría en Administración Deportiva</strong> - Instituto Politécnico Nacional (2005)</li>
+            <li><strong>Licenciatura en Cultura Física y Deporte</strong> - UNAM (2000)</li>
+            <li><strong>Certificaciones internacionales</strong> en metodología del entrenamiento deportivo</li>
+        </ul>
+
+        <h3>Reconocimientos y Distinciones</h3>
+        <ul>
+            <li>Premio Nacional de Investigación en Ciencias del Deporte (2018)</li>
+            <li>Distinción "Docente del Año" FACUFI (2016, 2021)</li>
+            <li>Miembro del Sistema Nacional de Investigadores - Nivel II</li>
+            <li>Medalla al Mérito Deportivo - Gobierno del Estado (2019)</li>
+        </ul>
+    </div>
+
+    <div class="section" id="programa">
+        <h2>Programa de Trabajo 2025-2029</h2>
+        <p>Mi programa de trabajo se fundamenta en <span class="highlight">cuatro ejes estratégicos</span> diseñados para transformar nuestra facultad en un referente nacional e internacional:</p>
+        
+        <h3>Eje 1: Excelencia Académica</h3>
+        <p>Fortalecimiento de la calidad educativa mediante la actualización curricular, capacitación docente continua y evaluación de programas académicos.</p>
+
+        <h3>Eje 2: Investigación e Innovación</h3>
+        <p>Impulso a proyectos de investigación con impacto social, creación de grupos de investigación multidisciplinarios y publicaciones en revistas indexadas.</p>
+
+        <h3>Eje 3: Internacionalización</h3>
+        <p>Desarrollo de convenios internacionales, programas de movilidad estudiantil y docente, y participación en redes académicas globales.</p>
+
+        <h3>Eje 4: Responsabilidad Social</h3>
+        <p>Proyectos de extensión comunitaria, promoción de la actividad física en poblaciones vulnerables y campañas de salud pública.</p>
+    </div>
+
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p><strong>Email:</strong> <a href="mailto:aflores@facufi.edu.mx">aflores@facufi.edu.mx</a></p>
+        <p><strong>Teléfono:</strong> <a href="tel:+525512345678">+52 55 1234 5678</a></p>
+        <p><strong>Redes Sociales:</strong> @AndreaFloresDirectora</p>
+        <p style="margin-top: 2rem; font-size: 1.2rem; color: #D4AF37;"><strong>¡TU VOTO ES NUESTRO FUTURO!</strong></p>
+        <p>&copy; 2025 Andrea Flores Flores - Candidata a Directora FACUFI</p>
     </footer>
 </body>
 </html>
