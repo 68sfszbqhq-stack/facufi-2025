@@ -1,51 +1,98 @@
+/*
+ * Archivo: css/style.css
+ * Estilos personalizados para el sitio de Elecciones FACUFI 2025
+ */
+
+/* --- 1. Estilos Globales y Fuentes --- */
 body {
+    /* Usamos la fuente 'Montserrat' que importamos en el HTML */
     font-family: 'Montserrat', sans-serif;
-    background: #f8f9fa;
+    background-color: #f8f9fa; /* Un gris muy claro de fondo */
 }
+
+/* --- 2. Encabezado (Hero) --- */
 .hero-section {
-    background: url('../img/hero-background.jpg') center/cover no-repeat;
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Color de fondo principal, puedes cambiarlo */
+    background-color: #003366; /* Un azul oscuro institucional */
+    
+    /* Imagen de fondo (opcional). Descomenta la línea de abajo */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-background.jpg') no-repeat center center; */
+    background-size: cover;
+    padding: 4rem 0;
 }
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 3. Títulos de Sección --- */
 .section-title {
+    text-align: center;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 1.7rem;
+    color: #343a40; /* Color de texto oscuro */
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 10px;
 }
+
+/* Línea decorativa dorada debajo del título */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #D4AF37; /* Tono dorado */
+}
+
+/* --- 4. Fichas de Candidatos --- */
 .candidate-card {
     border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.17s, box-shadow 0.17s;
-    box-shadow: 0 6px 22px rgba(32, 41, 62, 0.16);
+    border-radius: 15px; /* Bordes más redondeados */
+    transition: all 0.3s ease;
 }
+
 .candidate-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 32px rgba(32,41,62,0.19);
+    /* Efecto de "levantar" la tarjeta al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
-.card-img-top {
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    background: #dee2e6;
+
+.candidate-card .card-img-top {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 350px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    object-position: top; /* Se enfoca en la parte superior (rostro) */
 }
-.card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+
+.candidate-card .card-title {
+    font-weight: 700;
+    color: #003366; /* Azul oscuro para el nombre */
 }
-.card-subtitle {
-    font-size: 1rem;
+
+/* Botón principal */
+.btn-primary {
+    background-color: #003366;
+    border-color: #003366;
+    font-weight: 600;
 }
-.card-text {
-    font-size: 1rem;
-    margin-top: 0.7rem;
+
+.btn-primary:hover {
+    background-color: #002244; /* Un poco más oscuro al pasar el mouse */
+    border-color: #002244;
 }
-footer {
-    border-top: 2px solid #343a40;
+
+/* Botón secundario */
+.btn-outline-primary {
+    color: #003366;
+    border-color: #003366;
+    font-weight: 600;
 }
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.2rem;
-    }
+
+.btn-outline-primary:hover {
+    background-color: #003366;
+    color: #fff;
 }
