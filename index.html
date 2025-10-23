@@ -40,10 +40,98 @@
     .cta{margin:2rem 0;padding:1rem;text-align:center;background:#222;border-radius:10px;border:2px solid var(--gold)}
     footer{background:var(--bg);color:var(--text);text-align:center;padding:2rem;border-top:2px solid var(--gold)}
     .sr{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-  </style>
+  </
+        /* Estilos para tarjetas interactivas tipo Apple */
+    .tarjetas-pregunta {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+    }
+    .tarjeta {
+      position: relative;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+      border-radius: 32px;
+      overflow: hidden;
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s, transform 0.3s;
+      animation: flotar 4s infinite alternate ease-in-out;
+    }
+    .tarjeta img {
+      width: 100%;
+      border-radius: 32px 32px 0 0;
+    }
+    .tarjeta h3 {
+      margin: 1rem 0 0.5rem 0;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #000;
+      border: none;
+    }
+    .mas {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      font-size: 1.7rem;
+      border: none;
+      background: #222;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.19);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .mas:hover {
+      background: #007aff;
+    }
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.55);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.activo {
+      display: flex;
+    }
+    .cerrar {
+      position: absolute;
+      top: 22px;
+      right: 38px;
+      cursor: pointer;
+      font-size: 2.7rem;
+      color: #fff;
+    }
+    #contenidoRespuesta {
+      background: #fff;
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      font-size: 1.15rem;
+      max-width: 400px;
+      color: #000;
+    }style>
 </head>
 <body>
   <nav class="top">
+
+    
     <div class="nav-inner">
       <div class="brand"><span class="dot"></span> FACUFI 2025</div>
       <div class="menu">
@@ -202,11 +290,61 @@
       <h3 style="color:var(--gold);margin:.25rem 0">¡VOTA ANDREA FLORES FLORES!</h3>
       <p style="font-weight:700">RENOVAMOS NUESTRA FUERZA - CONSTRUIMOS FUTURO</p>
     </div>
+
+        <!-- Apartado interactivo de preguntas y respuestas visual tipo Apple -->
+    <div class="tarjetas-pregunta">
+      <!-- Imagen 85: Reconocimiento y mejora -->
+      <div class="tarjeta">
+        <img src="img/Imagen 85.JPG" alt="Reconocimiento y mejora">
+        <h3>¡Una buena mejora para todos!</h3>
+        <button class="mas" onclick="mostrarRespuesta('resp1')">+</button>
+      </div>
+      <!-- Imagen 86: Plan de estudios actualizado -->
+      <div class="tarjeta">
+        <img src="img/Imagen 86.JPG" alt="Plan de estudios actualizado">
+        <h3>Plan de estudios actualizado</h3>
+        <button class="mas" onclick="mostrarRespuesta('resp2')">+</button>
+      </div>
+      <!-- Imagen 87: Material de laboratorio -->
+      <div class="tarjeta">
+        <img src="img/Imagen 87.JPG" alt="Material de laboratorio">
+        <h3>Material de laboratorio</h3>
+        <button class="mas" onclick="mostrarRespuesta('resp3')">+</button>
+      </div>
+      <!-- Imagen 89: Proceso de titulación -->
+      <div class="tarjeta">
+        <img src="img/Imagen 89.JPG" alt="Titulación">
+        <h3>Proceso de titulación eficiente</h3>
+        <button class="mas" onclick="mostrarRespuesta('resp4')">+</button>
+      </div>
+    </div>
+
+    <div id="modalRespuesta" class="modal">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <div id="contenidoRespuesta"></div>
+    </div>
   </main>
 
   <footer>
     © 2025 Andrea Flores Flores - Candidata a la Dirección FACUFI<br/>
     Benemérita Universidad Autónoma de Puebla - Proceso Electoral 2025-2029
   </footer>
-</body>
+
+  
+    <script>
+    function mostrarRespuesta(id) {
+      const respuestas = {
+        resp1: "Gracias por tu apoyo y por permitirnos mejorar juntos. Nada de esto sería posible sin las ideas, propuestas y necesidades de los alumnos. Sigamos trabajando unidos.",
+        resp2: "Darle seguimiento puntual a los programas de licenciatura y posgrado para actualizarlos. Incorporar las tendencias que exige el mercado: tecnología aplicada al deporte (apps, wearables, IA) y las habilidades que realmente usarás al egresar. Queremos una educación de calidad, moderna y pertinente.",
+        resp3: "Adquisición Anual: Gestionaremos la compra o actualización de equipo para los laboratorios cada año.<br>Plan de Mejora: Elaboraremos un plan específico para mejorar la infraestructura del CESFI.<br>Gestión Eficiente: Optimizaremos los recursos para asegurar la disponibilidad regular de insumos y materiales.",
+        resp4: "Simplificar Trámites: Plataforma digital unificada para titulación, reducción de papeleo físico y centralización de información. Eliminaremos procesos burocráticos redundantes y mejoraremos el acompañamiento mediante tutorías y talleres claros en línea y presencial. Además, buscaremos más opciones de titulación."
+      };
+      document.getElementById('contenidoRespuesta').innerHTML = respuestas[id];
+      document.getElementById('modalRespuesta').classList.add('activo');
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalRespuesta').classList.remove('activo');
+    }
+  </script></body>
 </html>
